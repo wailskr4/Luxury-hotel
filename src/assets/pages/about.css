@@ -1,0 +1,82 @@
+.main_about {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: url("../Images/aboutbanner.webp") center center / cover no-repeat;
+    background-attachment: fixed;
+    animation: parallaxMove 10s linear infinite alternate;
+}
+
+/* add parallax effect */
+@keyframes parallaxMove {
+    from {
+        background-position: center 0;
+    }
+    to {
+        background-position: center 10%;
+    }
+}
+
+/* Dark mode overlay */
+.main_about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Effet subtil d’assombrissement */
+    z-index: 1;
+}
+
+[data-theme="dark"] .main_about::before {
+    background: rgba(0, 0, 0, 0.6); /* Plus sombre en mode nuit */
+}
+
+/* Contenu central avec effet verre */
+.placement_about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.15); /* Transparence subtile */
+    backdrop-filter: blur(12px); /* Effet verre */
+    width: clamp(320px, 40vw, 650px);
+    height: clamp(220px, 34vh, 500px);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+#slideh1{
+    font-size: clamp(1.375rem, 1.2162rem + 0.8471vw, 2.275rem);
+    font-weight: 800;
+}
+
+/* Effet de survol interactif */
+.placement_about:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+}
+
+/* Mode sombre */
+[data-theme="dark"] .placement_about {
+    background-color: rgba(22, 22, 22, 0.8);
+    color: var(--text-color);
+    box-shadow: 0 0 15px rgba(244, 209, 96, 0.15); /* Glow léger en mode sombre */
+}
+[data-theme="dark"] h2 {
+    color: var(--text-color);
+}

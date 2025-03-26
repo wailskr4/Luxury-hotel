@@ -1,0 +1,120 @@
+/* From Uiverse.io by satyamchaudharydev */
+/* Enhanced for mobile responsiveness, hover effects, and accessibility */
+/* Sticky bottom-right positioning */
+
+/* The switch - the box around the slider */
+.switch {
+    display: block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like an inline-padding of switch */
+    --slider-offset: 0.3em;
+    position: fixed; /* Changed to fixed for sticky positioning */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    z-index: 1000; /* Ensure it stays on top of other elements */
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 30px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Slider circle (icon) */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon, 1.4em);
+    width: var(--size-of-icon, 1.4em);
+    border-radius: 50%;
+    left: var(--slider-offset, 0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+    transition: left 0.4s ease, background 0.4s ease, transform 0.4s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover effect for the slider */
+  .slider:hover:before {
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  /* Checked state - dark mode */
+  input:checked + .slider {
+    background-color: #303136;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb, 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  /* Focus state for accessibility */
+  input:focus-visible + .slider {
+    outline: 2px solid #ff8c00;
+    outline-offset: 2px;
+  }
+  
+  /* Disabled state */
+  input:disabled + .slider {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  input:disabled + .slider:before {
+    background: #ccc;
+  }
+  
+  /* Mobile-specific adjustments */
+  @media (max-width: 480px) {
+    .switch {
+      --width-of-switch: 3em; /* Slightly smaller for mobile */
+      --height-of-switch: 1.75em;
+      --size-of-icon: 1.2em; /* Smaller icon for mobile */
+      --slider-offset: 0.25em;
+      bottom: 10px; /* Closer to the bottom on mobile */
+      right: 10px; /* Closer to the right on mobile */
+    }
+  
+    .slider {
+      border-radius: 25px; /* Slightly rounded for mobile */
+    }
+  
+    .slider:before {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Lighter shadow for mobile */
+    }
+  
+    /* Improve touch interaction */
+    .slider {
+      touch-action: manipulation; /* Optimize for touch devices */
+    }
+  
+    /* Larger tap target for better usability */
+    .switch {
+      padding: 0.5em; /* Increase tap area */
+    }
+  }

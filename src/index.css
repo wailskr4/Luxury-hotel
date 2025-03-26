@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #2C3E50; /* Bleu nuit profond - Élégance et modernité */
+  --secondary-color: #A67C52; /* Doré marron - Luxe et chaleur */
+  --text-color: #055EB8; /* Bleu vibrant - Lisibilité et dynamisme */
+  --background-color: #F8F5F2; /* Beige doux - Lumineux et accueillant */
+  --contrast-color: #FFFFFF; /* Blanc pur - Pour les contrastes forts */
+  --accent-color: #8E6F52; /* Cuivre foncé - Subtilité et raffinement */
+  --border-color: rgba(0, 0, 0, 0.1); /* Lignes discrètes et modernes */
+}
+
+/* Mode sombre */
+[data-theme="dark"] {
+  --primary-color: #1B1F2A; /* Bleu-gris foncé – Élégance et sobriété */
+  --secondary-color: #A67C52; /* Doré marron – Luxe et chaleur */
+  --text-color: #E0E0E0; /* Gris clair – Lisibilité et modernité */
+  --background-color: #121417; /* Noir bleuté – Profondeur et raffinement */
+  --contrast-color: #F4D160; /* Or doux – Accents lumineux et chics */
+  --accent-color: #8E6F52; /* Cuivre foncé – Touche subtile et sophistiquée */
+  --border-color: rgba(255, 255, 255, 0.1); /* Bordures discrètes en mode sombre */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Appliquer le background globalement */
+html, body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
