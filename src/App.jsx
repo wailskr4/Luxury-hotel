@@ -21,9 +21,10 @@ function App() {
       <ThemeToggle theme={theme} setTheme={setTheme} />
       <NavigationBar theme={theme}  />
       <Routes>
-        <Route path="/Home" element={<Home theme={theme} />} />
-        <Route path="/About" element={<About theme={theme} />} />
-      </Routes>
+  <Route path="/" element={<Home theme={theme} />} />   {/* Page principale */}
+  <Route path="home" element={<Home theme={theme} />} />
+  <Route path="about" element={<About theme={theme} />} />
+</Routes>
     </>
   );
 }

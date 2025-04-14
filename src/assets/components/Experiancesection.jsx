@@ -1,16 +1,21 @@
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./ExperienceSection.css";
-
+import Advanced from "../Images/advanced.jpeg"
+import ban from "../Images/ban.webp"
+import elite from "../Images/elite.webp"
+import views from "../Images/views.webp"
+import chef from "../Images/views.webp"
+import spa from "../Images/spa.jpg"
 const ExperienceSection = () => {
   const items = [
-    { src: "https://localhost/Hotl/images/advanced.jpeg", alt: "Advanced class", title: "Advanced class", description: "Luxury but at a small price" },
-    { src: "https://localhost/Hotl/images/elite.jpeg", alt: "Elite class", title: "Elite class", description: "Is there a limit to class?" },
-    { src: "https://localhost/Hotl/images/ban.jpg", alt: "One night class", title: "One night class", description: "Passing by? Why not make it a unique day." },
-    { src: "https://localhost/Hotl/images/spa.jpg", alt: "Luxury Spa", title: "Luxury Spa", description: "Relax and enjoy a Top-Tier spa treatments." },
+    { src: Advanced, alt: "Advanced class", title: "Advanced class", description: "Luxury but at a small price" },
+    { src: elite, alt: "Elite class", title: "Elite class", description: "Is there a limit to class?" },
+    { src: ban, alt: "One night class", title: "One night class", description: "Passing by? Why not make it a unique day." },
+    { src: spa, alt: "Luxury Spa", title: "Luxury Spa", description: "Relax and enjoy a Top-Tier spa treatments." },
     
-    { src: "https://localhost/Hotl/images/chef.jpeg", alt: "Gourmet Master Chef", title: "Gourmet Master Chef", description: "They are ready to prove you why us" },
-    { src: "https://localhost/Hotl/images/views.jpeg", alt: "Mesmerizing Views", title: "Mesmerizing Views", description: "Do we need to say more?" },
+    { src: chef, alt: "Gourmet Master Chef", title: "Gourmet Master Chef", description: "They are ready to prove you why us" },
+    { src: views, alt: "Mesmerizing Views", title: "Mesmerizing Views", description: "Do we need to say more?" },
   ];
 
   return (
